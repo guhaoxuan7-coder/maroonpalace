@@ -1,26 +1,26 @@
-title: Panzerkreuzer A
-subtitle: A planned new battleship construction
+title: 小黄人案
+subtitle: 巨魔在增长
 tags: event
 max-visits: 1
 face-image: img/panzerkreuzer.jpg
-view-if: year = 1928 and month == 3
+view-if: year = 1928 and month == 2
 new-page: true
 
-= Panzerkreuzer
+= 小黄人案
 
-The Reichswehr Ministry is lobbying for a naval modernization program centered on the construction of a new battlecruiser, Panzerschiff A. The bourgeois parties are united in support, and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is likely to yield to right-wing pressure. A vote on the project is expected once a new government is formed after the May elections.
+ <span style="color: #D3C24D;">小黄人</span> 已经陷入疯狂.他提出以爆破加松,员工失业为代价,威胁阿方索给员工发福利.阿方索对雷恩右言右语,凭什么雷恩左言左语要扣好感分？
 
-This presents us with an opportunity: we could campaign against the ship’s construction and demand its cancellation in favor of greater social spending. The workers have rallied behind our slogan, "Children's Meals Instead of Armored Cruisers", but the mire of coalition politics may yet force us to backtrack—should we enter government.
+这一轮巨魔发言引发了大群的争吵, 智力正常的群友纷纷开始嘲笑这种狂妄自大的心态. <span style="color: #D3C24D;">小黄人</span> 控诉他受到了不公平待遇,被网络霸凌了,要求对攻击他的人进行禁言处理.
 
-- @anti_ship: Children's meals instead of armored cruisers!
-- @pro_ship: Stay relatively silent on the matter—we can’t break a promise we never made.
+- @anti_ship: 我们同意他的看法,对其他人进行禁言
+- @pro_ship: 差不多得了.
 
 @anti_ship
+choose-if: (levi_advisor or rosenfeld_advisor) and (left_strength >= reformist_strength) and (kpd_relation >= 50) 
+unavailable-subtitle: 管理团队还没有失智
 on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 2*(1-dissent); panzerkreuzer_campaign = 1
-
-Our catchy slogan has helped rally the workers’ vote and limit defections to the <span style="color: #700000;">**KPD**</span>.
 
 @pro_ship
 on-arrival: workers_kpd += 2; unemployed_kpd += 2; labor_dissent += 5; left_dissent += 5; kpd_relation -= 6; panzerkreuzer_campaign = 0
 
-Our silence has left the <span style="color: #700000;">**KPD**</span> as the sole party vocally opposing the ship’s construction—and they waste no time accusing us of betrayal. The Left and Labor factions voice their displeasure.
+在管理团队宣布驱逐决定以前, <span style="color: #D3C24D;">小黄人</span> 自己退出了群聊.
