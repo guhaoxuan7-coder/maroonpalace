@@ -43,7 +43,7 @@ on-arrival: advisor_action_timer = 6; center_strength += 10
 我们已经成功加强了中道力量.
 
 @emergency_fundraising
-title: 紧急筹款
+title: 爆金币
 view-if: difficulty < 1
 subtitle: 小铁墙是一个富哥.
 choose-if: advisor_action_timer = 0
