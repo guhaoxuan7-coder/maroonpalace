@@ -1,4 +1,4 @@
-title: Rudolf Hilferding
+title: 竖线
 is-pinned-card: true
 tags: advisor, centrist
 card-image: img/portraits/HilferdingRudolf.jpg
@@ -6,19 +6,18 @@ view-if: hilferding_advisor = 1
 new-page: true
 #face-image: img/portraits/HilferdingRudolf.jpg
 
-= Rudolf Hilferding
+= 竖线
 
-Hilferding is an economist and a disciple of Karl Kautsky. Originating from Vienna, Austria, he trained as a medical doctor, but later became involved in Marxist economics as a discipline. He has been the lead ideologist of our party since the Heidelberg Program of 1925.
+竖线是马伦宫领导团队之一，并兼职南山专管员职务.
 
 - @against_right_and_left
 - @toleration
 - @finance_ministry_
-- @economic_democracy_
 - @root: Return to main
 
 @against_right_and_left
-title: Against Right and Left
-subtitle: As a Centrist, Hilferding seeks to steer a course between the party's factions.
+title: 打击南山反串
+subtitle: 竖线已得到 <span style="color: #c00000;">约修亚·阿斯特雷</span> 授权.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 5; advisor_action_time = time; center_strength += 10; left_strength -= 5; labor_strength -= 5; neorevisionist_strength -= 5; center_dissent -= 10
@@ -26,26 +25,18 @@ on-arrival: advisor_action_timer = 5; advisor_action_time = time; center_strengt
 We have reduced the strength of the dissident factions in the party.
 
 @toleration
-title: Defending Toleration
-subtitle: Hilferding supports cooperation with the bourgeois parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_toleration: The <span style="color: #c00000;">SPD</span> is not in toleration. ?]
-choose-if: spd_in_government = 0 and spd_toleration = 1 and advisor_action_timer = 0
+title: 开展大群科普
+subtitle: 大群的胡说八道已经引起注意，我们需要加强科普事业.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent -= 8; center_dissent -= 5
 
 We have reduced dissent among the anti-toleration factions.
 
 @finance_ministry_
-title: Fiscal Policy
-subtitle: As Finance Minister, Hilferding can enact tax policies.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">SPD</span> not in government: ?] [? if finance_minister_party != "SPD" : The <span style="color: #c00000;">SPD</span> does not control the finance ministry. ?]
+title: 立刻抓捕南山
+subtitle: 南山不怕蓝帽，已经不是一般的叛乱了，一定要出重拳.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">竖线</span> 还没有掌权: ?] [? if finance_minister_party != "SPD" : The <span style="color: #c00000;">马伦宫领导层</span> 不掌握这种权力. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government == 1 and finance_minister_party == "SPD"
 on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6; last_advisor_action = 1
 go-to: fiscal_policy
-
-@economic_democracy_
-title: Economic Democracy
-subtitle: Enact policies to build a more democratic economy.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">SPD</span> not in government: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : We do not have the necessary government ministers. ?] [? if cvp_economy_accepted : Our coalition agreement stipulates against socialization. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government == 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and (labor_minister_party == "SPD")
-on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
-go-to: economic_democracy
